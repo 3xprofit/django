@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ТОП-ТОП</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-  </head>
-<body>
-    <div class="header">
-        <table>
-        <tr>        
-            <td><img src="/static/img/logo.jpg" width="100" height="100" alt="logo"></td>
-              
-            <td><ul class="menu">
-                <li><a href="/index">Главная</a></li>
-                <li><a href="/catalog">Каталог</a></li>
-                <li><a href="/contacts">Контакты</a></li>
-                </ul></td>
-        </tr> 
-        </table>
-    </div>  
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+    <title>Контакты</title>
+{% endblock %}
+
+{% block content %}
     <hr>
    <h1>Напишите нам</h1>
 
@@ -30,24 +16,17 @@
         Текстовое поле:
         <textarea name="comments" id="" cols="70" rows=5" placeholder="Ваше сообщение"></textarea>
         <input type="submit" name="accept" id="" value="Отправить данные">
-        <input type="reset" name="reset" id="" value="Очистить форму"> 
+        <input type="reset" name="reset" id="" value="Очистить форму">
     </form>
-    
-    <h3>Адрес</h3>  
-    <ul> 
+
+    <h3>Адрес</h3>
+    <ul>
         <li>Телефон: 8-(3452)-592157</li>
-        <li>Тюмень, ул. Ленина дом 57</li> 
+        <li>Тюмень, ул. Ленина дом 57</li>
         <li>TOP-POP@gmail.com</li>
         <li>Мы работаем (c 09:00 до 22:00) </li><br><br>
     </ul>
-    
+
     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6d696ba10c150e60c188803e780706062421bf0eac2b3a71657f02c1152d181a&amp;width=100%25&amp;height=374&px;lang=ru_RU&amp;scroll=true"></script>
 
-    
-    <div class="footer">
-    <br> <p>Все права защищены &copy; MagistrYoda</p>
-    </div> 
-   
-
-</body>
-</html>
+{% endblock %}

@@ -15,14 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainapp.views import index, contacts, catalog
+# from mainapp.views import index, contacts, catalog
+from mainapp import views as mainapp
 
 urlpatterns = [
-    path('', index),
+    path('', mainapp.index),
     # path('products/', products),
-    path('catalog/', catalog),
-    path('index/', index),
-    path('contacts/', contacts),
-    path('admin/', admin.site.urls),
-
+    path('items/', mainapp.catalog, name='catalog'),
+    # items - заменяемое имя для отображения на сайте , catalog- имя файла
+    path('index/', mainapp.index, name='index'),
+    path('contacts/', mainapp.contacts, name='contacts'),
+    path('admin/', admin.site.urls, name='admin'),
 ]
+
