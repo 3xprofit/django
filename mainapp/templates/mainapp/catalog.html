@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ТОП-ТОП</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-</head>
+{% extends 'mainapp/base.html' %}
 
-<body>
-    <div class="header">
-        <table>
-        <tr>        
-            <td><img src="/static/img/logo.jpg" width="100" height="100" alt="logo"></td>
-              
-            <td><ul class="menu">
-                <li><a href="/index">Главная</a></li>
-                <li><a href="/catalog">Каталог</a></li>
-                <li><a href="/contacts">Контакты</a></li>
-                </ul></td>
-        </tr> 
-        </table>
-    </div> 
+{% block title %}
+    <title>Каталог</title>
+{% endblock %}
+
+{% block content %}
     <hr>
    <h1>Каталог</h1>
         <div class="product_i">
@@ -28,16 +13,11 @@
             <br>
 <!--            <a href="Catalog/Linksys.html"> VoIP-телефон Linksys SPA502G</a>-->
             <br>
-        </div> 
-    
+        </div>
+
         <div class="product_i">
             <a href="Catalog/Redmi.html"><img src="/static/img/Redmi.jpg" width="100" height="100" alt="phone"></a>
 <!--            <a href="Catalog/Redmi.html">Смартфон Redmi 7 3/32GB</a> -->
-        </div>   
+        </div>
            <br><br><br><br><br><br><br><br><hr>
-    <div class="footer">
-    <br> <p>Все права защищены &copy; MagistrYoda</p>
-    </div> 
-   
-</body>
-</html>
+{% endblock %}
