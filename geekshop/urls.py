@@ -17,14 +17,18 @@ from django.contrib import admin
 from django.urls import path
 # from mainapp.views import index, contacts, catalog
 from mainapp import views as mainapp
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', mainapp.index),
     # path('products/', products),
-    path('items/', mainapp.catalog, name='catalog'),
+    path('items/', mainapp.products, name='products'),
     # items - заменяемое имя для отображения на сайте , catalog- имя файла
     path('index/', mainapp.index, name='index'),
     path('contacts/', mainapp.contacts, name='contacts'),
     path('admin/', admin.site.urls, name='admin'),
 ]
 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
