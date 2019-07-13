@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %} <!--комментраий для HTML что в файле делаем динамическую замену-->
+
+<head>
+    <meta charset="UTF-8">
+
+    {% block title %}
+    {% endblock %}
+
+    {% include 'mainapp/includes/inc_menu.html' %}
+
+    {% block css %}
+    {% endblock %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <h3> Cегодня  {% now "d m Y" %} отличный день покупок! </h3>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+
+    <div class="footer">
+    <br> <p>Все права защищены &copy; MagistrYoda</p>
+    </div>
+
+</body>
+</html>

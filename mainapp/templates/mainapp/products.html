@@ -20,4 +20,14 @@
 <!--            <a href="Catalog/Redmi.html">Смартфон Redmi 7 3/32GB</a> -->
         </div>
            <br><br><br><br><br><br><br><br><hr>
+    <h1>Продукты new</h1>
+    <ul>
+        {% for product in products %}
+            {% if product.image %}
+                <img src={{ product.image.url }}>
+            {% endif %}
+                <li>{{ product.name }}</li>
+        {% endfor %}
+    </ul>
+
 {% endblock %}
